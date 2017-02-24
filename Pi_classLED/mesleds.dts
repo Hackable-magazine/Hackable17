@@ -1,0 +1,52 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+   compatible = "brcm,bcm2708", "brcm,bcm2709", "brcm,bcm2710";
+
+   fragment@0 {
+       target = <&leds>;
+       __overlay__ {
+           ma_led0: maled0 {
+               label = "maled0";
+               gpios = <&gpio 21 0>;
+               linux,default-trigger = "timer";
+           };
+           ma_led1: maled1 {
+               label = "maled1";
+               gpios = <&gpio 20 0>;
+               linux,default-trigger = "heartbeat";
+           };
+           ma_led2: maled2 {
+               label = "maled2";
+               gpios = <&gpio 16 0>;
+               linux,default-trigger = "timer";
+           };
+           ma_led3: maled3 {
+               label = "maled3";
+               gpios = <&gpio 12 0>;
+               linux,default-trigger = "mmc0";
+           };
+           ma_led4: maled4 {
+               label = "maled4";
+               gpios = <&gpio 26 0>;
+               linux,default-trigger = "cpu0";
+           };
+           ma_led5: maled5 {
+               label = "maled5";
+               gpios = <&gpio 19 0>;
+               linux,default-trigger = "cpu1";
+           };
+           ma_led6: maled6 {
+               label = "maled6";
+               gpios = <&gpio 13 0>;
+               linux,default-trigger = "cpu2";
+           };
+           ma_led7: maled7 {
+               label = "maled7";
+               gpios = <&gpio 6 0>;
+               linux,default-trigger = "cpu3";
+           };
+       };
+   };
+};
