@@ -12,7 +12,7 @@ int cherchecode(unsigned int code) {
 
 void majcode(int pos) {
   for(int i=0; i < TAILLE_BUF; i++) {
-    if(i < TAILLE_BUF-pos)
+    if(i < TAILLE_BUF-pos-1)
       buf[i] = buf[i+pos+1];
     else
       buf[i] = random(1,65536);
